@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400&display=swap');
+
+.hidden {
+  display: none;
+}
+
+.word:hover {
+  cursor: pointer;
+  color: grey;
+  font-style: normal grey bold;
+}
+
+.word {
+  margin-right: 10px;
+  font-size: 25px;
+  align-self: flex-end;
+}
+
+.definition {
+font-size: 15px;
+align-self: flex-end;
+}
+
+.result {
+  display: flex;
+  align-self: center;
+  margin-bottom: 0px;
+}
+
+.results_below {
+  color: grey;
+  font-size: 10px;
+}
+
+.row_2 {
+  min-height: 100vh;
+}
+
+.title {
+  border-right: 1px solid #ddd; /* Border color */
+  padding: 10px; /* Add padding to prevent content from touching the shadow */
+  flex: 1;
+  background-color:whitesmoke;
+  width: 100%;
+  display: block;
+  border-radius: 0  10px 10px 0;
+}
+
+.header {
+  font-family: 'Quicksand', sans-serif, bold;
+  font-weight: 700;
+  color: black;
+  text-align: left;
+  font-size: 63px;
+  flex: 1;
+}
+
+.font_style_1 {
+  font-family: 'Quicksand', sans-serif, bold;
+  font-size: 25px;
+}
+
+.font_style_2 {
+  font-family: 'Quicksand', sans-serif, bold;
+  font-size: 20px;
+}
+
+.advOptionsButton {
+  width: 15%;
+}
+
+.findWordButton {
+  font-family: 'Quicksand', sans-serif, bold;
+}
