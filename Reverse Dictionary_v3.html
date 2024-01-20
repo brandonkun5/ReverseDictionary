@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Reverse Dictionary</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="Reverse_Dictionary (Design 3).css">
+    <script src = "reverse_dictionary_JS.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row row_2">
+            <div class="col-3 title g-0">
+                <div class="header">
+                    Reverse Dictionary
+                </div>
+                <img src="noun-globe-6451527.png" style="max-width: 30%; float: left;" alt="created by Karina from Noun Project">
+            </div>
+            
+            <div class="col-9">
+                <div class="input">
+                    <div class="row">
+                        <div class="ms-3 mt-3">
+                            <p class="font_style_1">Enter a phrase or collection of words to find a singular word:</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="ms-3 mt-3 input-group input-group-lg">
+                            <input type="text" class="form-control" id="inputPhrase" placeholder="Enter your phrase or words">
+                            <button class="btn btn-outline-secondary text-primary-emphasis me-3 findWordButton" onclick="getReverseDictionary()">Find Word</button>
+                        </div>
+                    </div>
+                    <div class="row mt-3 ms-3">
+                        <button style="float: left;" class="btn btn-secondary dropdown-toggle ms-3 advOptionsButton" onclick="toggleCode_One(); toggleCode_Two(); toggleCode_Three(); toggleCode_Four();">Advanced Options</button>
+                    </div>
+                    <div class="row mt-3 ms-3">
+                        <div id="codeBlock_One" class="input-group hidden">
+                            <p style="float: left;">What is this being used for? (Resume, academic paper, novel etc.)</p>
+                        </div>
+                    </div>
+                    <div class="row mt-1 ms-3">
+                        <div id="codeBlock_Two" class="input-group hidden">
+                            <input class="form-control ms-3" type="text" style="float: left;" id="inputType" placeholder="Enter here">
+                        </div>
+                    </div>
+                    <div class="row mt-3 ms-3">
+                        <div id="codeBlock_Three" class="input-group hidden">
+                            <p style="float: left;">What is the tone you are going for? (Professional, comedic, romantic, etc.)</p>
+                        </div>
+                    </div>
+                    <div class="row mt-1 ms-3">
+                        <div id="codeBlock_Four" class="input-group hidden">
+                            <input class="form-control ms-3" type="text" style="float: left;" id="inputTone" placeholder="Enter here">
+                        </div>
+                    </div>    
+                </div>
+                <div class="row">
+                    <div id="results_below" class="ms-4"></div>
+                </div>
+                <div class="row">
+                    <div id="spinner" class="ms-5 mt-3 spinner-border" role="status" style="display: none;">
+                        <span class="sr-only"></span>
+                    </div>
+                </div>
+                <div class=" row ms-4">
+                    <div id="definitionOne" class="result">
+                        <p id="resultOne" class="word"></p>
+                    </div>
+                    <div id="definitionTwo" class="result">
+                        <p id="resultTwo" class="word"></p>
+                    </div>
+                    <div id="definitionThree" class="result">
+                        <p id="resultThree" class="word"></p>
+                    </div>
+                    <div id="definitionFour" class="result">
+                        <p id="resultFour" class="word"></p>
+                    </div>
+                    <div id="definitionFive" class="result">
+                        <p id="resultFive" class="word"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
