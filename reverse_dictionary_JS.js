@@ -1,25 +1,3 @@
-
-
-function findWordsInQuotations(sentence) {
-    // Regular expression to match words within double quotations
-    // This regex pattern captures words within double quotes
-    const regex = /"([^"]+)"/g;
-
-    // Use the match method to find all words in quotations
-    const matches = sentence.match(regex);
-
-    if (matches) {
-        // Extract and print the words within quotations
-        const wordsInQuotations = matches.map(match => match.replace(/"/g, '')); // Remove double quotes
-        return wordsInQuotations;
-    } else {
-        return [];
-    }
-    }
-
-    // Replace with your actual API key
-    const apiKey = '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';
-
     async function getReverseDictionary() {
 
         document.getElementById('results_below').innerHTML = '<h5 class="results_below ms-3 mt-3">Results Below</h5>';
@@ -30,7 +8,7 @@ function findWordsInQuotations(sentence) {
         const inputTone = document.getElementById('inputTone').value;
 
         // Use the OpenAI GPT-3 API to find a singular word
-        let prompt = `What is are the five best words for "${inputPhrase}", when you respond, just respond with the words, with the first letter capitalized and all of the words delimited by commas.`;
+        let prompt = `What are the five best words for "${inputPhrase}", when you respond, just respond with the words, with the first letter capitalized and all of the words delimited by commas.`;
 
         if (inputType.trim() === "") {
             console.log("InputType is empty!");
@@ -46,7 +24,7 @@ function findWordsInQuotations(sentence) {
 
         console.log(prompt)
 
-        const response = await fetch('https://api.openai.com/v1/chat/completions', {
+        const response = await fetch('https://w84crtjl92.execute-api.us-east-1.amazonaws.com/default/reverse_dictionary_test', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${apiKey}`,
