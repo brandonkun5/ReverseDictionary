@@ -1,3 +1,14 @@
+function toggleElements() {
+    // Get all elements with the class "hidden" 
+    const hiddenElements = ['codeBlock_One', 'codeBlock_Two', 'codeBlock_Three', 'codeBlock_Four']; 
+
+    for (let i = 0; i < hiddenElements.length; i++) {
+        var toggleCode = document.getElementById(hiddenElements[i]);
+        toggleCode.classList.toggle("hidden");
+    }
+
+};
+
 function replaceSpacesWithUnderscore(inputString) {
     // Using regular expression to replace spaces with underscores globally
     return inputString.replace(/ /g, '_');
