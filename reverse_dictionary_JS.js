@@ -3,6 +3,7 @@ function replaceSpacesWithUnderscore(inputString) {
     return inputString.replace(/ /g, '_');
 };
 
+
 async function getReverseDictionary() {
     document.getElementById('results_below').innerHTML = '<h5 class="results_below ms-3 mt-3">Results Below</h5>';
     document.getElementById('spinner').style.display = "flex";
@@ -24,20 +25,19 @@ async function getReverseDictionary() {
     }
 
     console.log(prompt);
-    console.log(apiUrl);
 
     try {
         const response = await fetch(apiUrl);
+        console.log(response);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        console.log(data);
-        const chatGPToutput = data.choices[0].message.content;
-        console.log(chatGPToutput);
-        const singularWord = findWordsInQuotations(chatGPToutput);
+        console.log(data.chatGPToutput);
+        const chatGPToutput = data.chatGPToutput;
         
         const wordsArray = chatGPToutput.split(',');
+        console.log(wordsArray);
 
         document.getElementById('resultOne').textContent = wordsArray[0];
         document.getElementById('resultTwo').textContent = wordsArray[1];
