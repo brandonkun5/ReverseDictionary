@@ -11,29 +11,32 @@
 
 <body>
     <div class="container-fluid">
-        <div class="row row_2">
-            <div class="col-3 title g-0">
-                <div class="header">
-                    Reverse Dictionary
+        <div class="row header title">
+            <div class="col-12">
+                <div>
+                    Reverse Dictionary 
+                    <img src="noun-globe-6451527.png" style="width: 5%; height: auto;" alt="created by Karina from Noun Project">
                 </div>
-                <img src="noun-globe-6451527.png" style="max-width: 30%; float: left;" alt="created by Karina from Noun Project">
             </div>
-            
+        </div>
+        <div class="row row_2">
             <div class="col-9">
                 <div class="input">
                     <div class="row">
                         <div class="ms-3 mt-3">
-                            <p class="font_style_1">Enter a phrase or collection of words to find a singular word:</p>
+                            <p class="font_style_1">Enter a phrase or collection of words to find a single word:</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="ms-3 mt-3 input-group input-group-lg">
+                        <div class="ms-3 input-group">
                             <input type="text" class="form-control" id="inputPhrase" placeholder="Enter your phrase or words">
-                            <button class="btn btn-outline-secondary text-primary-emphasis me-3 findWordButton" onclick="getReverseDictionary()">Find Word</button>
+                            <div class="input-group-append">
+                                <button class="btn btn-secondary findWordButton" onclick="getReverseDictionary()">Find Word</button>
+                                <button class="btn btn-primary advOptionsButton" onclick="toggleElements()">Advanced Options</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="row mt-3 ms-3">
-                        <button style="float: left;" class="btn btn-secondary dropdown-toggle ms-3 advOptionsButton" onclick="toggleElements()">Advanced Options</button>
+                    <div class="row mt-3 ms-0">
                     </div>
                     <div class="row mt-3 ms-3">
                         <div id="codeBlock_One" class="input-group hidden">
@@ -47,14 +50,14 @@
                     </div>
                     <div class="row mt-3 ms-3">
                         <div id="codeBlock_Three" class="input-group hidden">
-                            <p style="float: left;">What is the tone you are going for? (Professional, comedic, romantic, etc.)</p>
+                            <p style="float: left;">What kind of word is it (noun, adjective, .etc.)</p>
                         </div>
                     </div>
                     <div class="row mt-1 ms-3">
                         <div id="codeBlock_Four" class="input-group hidden">
-                            <input class="form-control ms-3" type="text" style="float: left;" id="inputTone" placeholder="Enter here">
+                            <input class="form-control ms-3" type="text" style="float: left;" id="inputWordClass" placeholder="Enter here">
                         </div>
-                    </div>    
+                    </div>   
                 </div>
                 <div class="row">
                     <div id="results_below" class="ms-4"></div>
@@ -79,6 +82,21 @@
                     </div>
                     <div id="definitionFive" class="result">
                         <p id="resultFive" class="word"></p>
+                    </div>
+                    <div id="definitionSix" class="result">
+                        <p id="resultSix" class="word"></p>
+                    </div>
+                    <div id="definitionSeven" class="result">
+                        <p id="resultSeven" class="word"></p>
+                    </div>
+                    <div id="definitionEight" class="result">
+                        <p id="resultEight" class="word"></p>
+                    </div>
+                    <div id="definitionNine" class="result">
+                        <p id="resultNine" class="word"></p>
+                    </div>
+                    <div id="definitionTen" class="result">
+                        <p id="resultTen" class="word"></p>
                     </div>
                 </div>
             </div>
