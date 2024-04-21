@@ -7,7 +7,7 @@
 .word:hover {
   cursor: pointer;
   color: grey;
-  font-style: normal grey bold;
+  font-style: normal lightgrey bold;
 }
 
 .word {
@@ -37,38 +37,32 @@ align-self: flex-end;
 }
 
 .title {
-  border-right: 1px solid #ddd; /* Border color */
-  padding: 10px; /* Add padding to prevent content from touching the shadow */
-  flex: 1;
-  background-color:whitesmoke;
-  width: 100%;
-  display: block;
-  border-radius: 0  10px 10px 0;
+  padding: 15px; /* Add padding to prevent content from touching the shadow */
+  background-color: lightgrey;
 }
 
 .header {
-  font-family: 'Quicksand', sans-serif, bold;
+  font-family: 'RM Pro', sans-serif, bold;
   font-weight: 700;
   color: black;
   text-align: left;
-  font-size: 63px;
-  flex: 1;
+  font-size: 30px;
 }
 
 .font_style_1 {
-  font-family: 'Quicksand', sans-serif, bold;
+  font-family: 'RM Pro', sans-serif, bold;
   font-size: 25px;
 }
 
 .font_style_2 {
-  font-family: 'Quicksand', sans-serif, bold;
+  font-family: 'RM Pro', sans-serif, bold;
   font-size: 20px;
 }
 
-.advOptionsButton {
-  width: 20%;
+.findWordButton {
+  font-family: 'RM Pro', sans-serif, bold;
 }
 
-.findWordButton {
-  font-family: 'Quicksand', sans-serif, bold;
+.advOptionsButton {
+  font-family: 'RM Pro', sans-serif, bold;
 }
