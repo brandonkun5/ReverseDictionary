@@ -1,6 +1,6 @@
 function toggleElements() {
     // Get all elements with the class "hidden" 
-    const hiddenElements = ['codeBlock_One', 'codeBlock_Two', 'codeBlock_Three', 'codeBlock_Four']; 
+    const hiddenElements = ['codeBlock_One', 'codeBlock_Two', 'codeBlock_Three', 'codeBlock_Four', 'codeBlock_Five', 'codeBlock_Six']; 
 
     for (let i = 0; i < hiddenElements.length; i++) {
         var toggleCode = document.getElementById(hiddenElements[i]);
@@ -9,10 +9,19 @@ function toggleElements() {
 
 };
 
+
 function replaceSpacesWithUnderscore(inputString) {
     // Using regular expression to replace spaces with underscores globally
     return inputString.replace(/ /g, '_');
 };
+
+function replaceWords(originalString, wordToReplace, replacement) {
+    // Create a regular expression with the 'g' flag to replace all occurrences of the word
+    const regex = new RegExp('\\b' + wordToReplace + '\\b', 'gi');
+    // Use the replace() method to replace all occurrences of the word with the replacement
+    return originalString.replace(regex, replacement);
+}
+
 
 
 async function getReverseDictionary() {
@@ -20,20 +29,28 @@ async function getReverseDictionary() {
     document.getElementById('spinner').style.display = "flex";
 
     const inputPhrase = replaceSpacesWithUnderscore(document.getElementById('inputPhrase').value);
-    const inputType = document.getElementById('inputType').value;
-    const inputTone = document.getElementById('inputTone').value;
+    const inputType = replaceSpacesWithUnderscore(document.getElementById('inputType').value);
+    const inputWordClass = replaceSpacesWithUnderscore(document.getElementById('inputWordClass').value);
 
     // Use the OpenAI GPT-3 API to find a singular word
-    let prompt = `What are the five best words for "${inputPhrase}", when you respond, just respond with the words, with the first letter capitalized and all of the words delimited by commas.`;
+    let prompt = `What are the ten most perfect words to encapsulate the following phrase: "${inputPhrase}". when you respond,  respond with the first letter capitalized and all delimited by commas.`;
+    
+    if (inputType.trim() !== "") {
+        prompt = prompt + '. For reference, this is for a ' + inputType;
+    };
+
+    if (inputWordClass.trim() !== "") {
+        prompt = replaceWords(prompt, "words", inputWordClass + "s");
+    };
+
+    
+
+
+    console.log(prompt);
+
     let apiUrl = 'https://w84crtjl92.execute-api.us-east-1.amazonaws.com/default/reverse_dictionary_test?prompt=' + encodeURIComponent(prompt);
 
-    if (inputType.trim() !== "") {
-        prompt = prompt + 'For reference, this is for a ' + inputType;
-    }
-
-    if (inputTone.trim() !== "") {
-        prompt = prompt + '. For reference, I am going for a  ' + inputTone + ' tone.';
-    }
+    console.log(apiUrl)
 
     console.log(prompt);
 
@@ -55,6 +72,11 @@ async function getReverseDictionary() {
         document.getElementById('resultThree').textContent = wordsArray[2];
         document.getElementById('resultFour').textContent = wordsArray[3];
         document.getElementById('resultFive').textContent = wordsArray[4];
+        document.getElementById('resultSix').textContent = wordsArray[5];
+        document.getElementById('resultSeven').textContent = wordsArray[6];
+        document.getElementById('resultEight').textContent = wordsArray[7];
+        document.getElementById('resultNine').textContent = wordsArray[8];
+        document.getElementById('resultTen').textContent = wordsArray[9];
 
         document.getElementById('spinner').style.display = "none";
     } catch (error) {
